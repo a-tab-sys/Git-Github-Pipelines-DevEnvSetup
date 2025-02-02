@@ -1,0 +1,11 @@
+Git pipeline has 4 stages
+
+1. Working Directory (this is where we make changes)
+    --- git add --->
+2. Staging Area (changes are first ADDED to an intermediate step called the staging areA )
+    --- git commit --->
+4. Local Repo (from staging area, it is COMMITED to a local repository)
+    --- git push --->
+    <--- git fetch ---
+4. Remote Rep0 (Then you can PUSH it to  remote REPOSITORY)
+    Working Directory <-- git checkout--< local repository

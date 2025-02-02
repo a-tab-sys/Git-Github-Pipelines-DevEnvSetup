@@ -1,0 +1,17 @@
+$git config                     #configuring git
+$git init                       #create repository (repository=project or structure of diff files)
+$git clone <path>               #creates a clone of a repository on github and saves a local cloned copy
+$git add <file_name>    
+$git commit
+$git status
+$git remote
+$git checkout <branch_name>    #lets you go to different timestamps or different commits
+$git branch
+$git push
+$git pull
+$git merge <branch_name>
+$git diff
+$git reset
+$git revert
+$git tag
+$git log

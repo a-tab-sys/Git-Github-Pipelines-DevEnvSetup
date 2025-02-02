@@ -1,0 +1,120 @@
+$git config                     #configuring git
+$git init                       #create repository (repository=project or structure of diff files)
+$git clone <path>               #creates a clone of a repository on github and saves a local cloned copy
+$git add <file_name>    
+$git commit
+$git status
+$git remote
+$git checkout <branch_name>    #lets you go to different timestamps or different commits
+$git branch
+$git push
+$git pull
+$git merge <branch_name>
+$git diff
+$git reset
+$git revert
+$git tag
+$git log
+
+---------------------------------
+
+Git pipeline has 4 stages
+1. Working Directory (this is where we make changes)
+    --- git add --->
+2. Staging Area (changes are first ADDED to an intermediate step called the staging areA )
+    --- git commit --->
+4. Local Repo (from staging area, it is COMMITED to a local repository)
+    --- git push --->
+    <--- git fetch ---
+4. Remote Rep0 (Then you can PUSH it to  remote REPOSITORY)
+    Working Directory <-- git checkout--< local repository
+
+# when you open github on the web-you basically have a remote repository, you dont have anything locally
+
+-------------STEPS--------------
+
+STEP 0: DOWNLOAD GIT
+STEP 1: DOWNLOAD CONEMU
+STEP 2: CREATE AN ACCOUNT ON GITHUB
+STEP 3: CREATE AN EMPTY GITHUB REPO
+STEP 4: CONFIGURATION
+    on ConEmu/cmd command line or on Git CMD:
+            # To change directories, use the cd command with the name of a directory. 
+            # To return to the previous directory, use the cd command, but this time followed by a space and two periods. 
+            # mkdir: To create a new directory, use the command mkdir
+            # rmdir: used to delete directory
+            # if folder 1 had folder 1.1, 1.2, 1,3 - to delete 1.1 go into folder 1 and
+                rmdir <directory-name> : if the directory is empty
+                rmdir /s <directory-name> : Delete a directory and its contents:
+
+            #you have ou youe "" if the folder you are cd into has spaces in its title
+        # locally create a directory/folder with the same name as the repository you made on github web using above commands
+        # direct to that folder using above commands
+    $ git config --global user.name "a-tab-sys"
+    $ git config --global user.email "ammaarah.t33@gmail.com"
+STEP 5: INITIALIZE THE GIT REPO / OR IF YOU ALREADY HAVE FILES IN A REMOTE(GITHUB WEB) REPOSITORY YOU CAN CLONE THAT TO INITIALIZE 
+    # Remaining in that folder
+    $ git init                      #it will initialize an empty repository
+    $ git clone https://github.com/a-tab-sys/github-fundamentals.git
+STEP 6: GIT STATUS
+    $ git status                    #status of current repository, you will see the files being tracked or in the staging area
+STEP 11: LINK TO REMOTE REPO
+    #link what you are creating in cmd command line locally to the remote repository on github web
+    #go to your github repo and click on code and copy the https url to use below
+    #this connects you locl repo to the github repo
+    $ git remote add origin "https://github.com/a-tab-sys/github-fundamentals.git"
+STEP 7: CREATE A FILE
+    $ echo > file.txt
+    $ dir                            #to check directory structure 
+    $ git status                     #check status, you will see there are untracked files: file.txt is there but it is untracked
+STEP 8: ADD A STAGING AREA
+    $ git add file.txt
+    $ git add .     #if you were moving local files to   github, you use this to move that is in your initialized local directory to the staging area. before this step you should have navigated to the root folder of your project and donr $ git init to initialize the local directory as a git repository
+    $ git status                     #now there are no untracked files, but it is in the staging area
+STEP 9: ADD A COMMMIT AREA
+    $ git commit -m "first Commit"   #now you have mmmitied to local repository. you will see that you made a file change and made an insertion. adding the message is optional, ou can just git commit
+    $ git status                     #now since your file is commited, it will tell you nothing to commit, working tree clean
+    $ git log --oneline              #show you a log of different commits, you can display date and time here too but youll have to find out what the command for that is
+    $ git branch                     #Running git branch without any arguments shows a list of all local branches in your repository. The current branch is highlighted with an asterisk (*) next to its name.
+STEP 12: GIT PUSH
+    #when we created the github web repo, we added a readme file there already, so our repo isnt empty
+    #one solution is to start from scratch- this means redo initialization process but instead use the clone command to initialize
+    git push
+
+To ADD MORE FILES - USE ABOVE PROCEDURE
+
+TO REMOVE FILES/RETURN TO PREVIOUS COMMIT
+    $ git log --oneline     #Will show you previous commits, commit number and associated message
+                            #HEAD tells you which commit is the current one
+    TO GO BACK TO VIEW A PREVIOUS COMMIT
+    $ git checkout 9a72a3f      #lets you checkout previous commits using the given commit number. you are in a detatched Head state
+                                #HEAD tells you which commit is the current one
+    $ git status                #it will tell you your head is detatched and give you the commit number for the previous version you are viewing
+
+TO TOTALLY REVERT TO A PREVIOUS COMMIT METHOD 1
+    $ git checkout 8dd48bd      #go back to the most recent head file
+    $ git log --oneline         #you can see the head is back to the second commit
+    $ git reset --hard          #tells you where the head is
+    $ git log --oneline           #see that
+    $ git reset --hard 9a72a3f      #sets the head to be the commit you passed in and deletes the commits more recent commits to this one
+            
+            This was before you deleted it second commit for your reference
+            " $ git log --oneline
+            8dd48bd (HEAD, origin/main, origin/HEAD, main) second commit
+            9a72a3f first Commit
+            8f671f2 Initial commit "
+
+NOW YOU HAVE DELETED THE SECOND COMMIT, TO GET IT BACK
+    $ git checkout main
+    $ git checkout -- 9a72a3f
+
+TO TOTALLY REVERT TO A PREVIOUS COMMIT METHOD 2
+    $ git log --oneline
+    $ git checkout -- 9a72a3f     #i dont think this did anything
+    $ git log --oneline
+
+---------------------------
+
+Repository that teaches you Git in game Format
+
+---- DO THIS SOON-----
