@@ -18,7 +18,5 @@ The aim of this repository is to provide a beginner-friendly resource for learni
 - **Repository**: Files that have been committed to the Git history.  
 
 ### 3. **Useful Commands**  
-A list of key Git Bash commands for working with Git:  
-- **Initialization**:  
-  ```bash  
-  git init  
+- A list of key Git Bash commands for working with Git.
+
