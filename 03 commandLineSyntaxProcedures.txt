@@ -51,7 +51,8 @@ ________________________________________________________________________|_______
             $ git remote -v
                 # Verifies the new remote URL
         9. Push the changes in your local repository to GitHub if there is a remote branch called master (or main if that's what you're using)
-            $ git push origin master
+            $ git push origin master         OR
+            $ git push origin main
 
 
 
