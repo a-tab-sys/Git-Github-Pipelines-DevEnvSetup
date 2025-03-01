@@ -54,6 +54,17 @@ ________________________________________________________________________|_______
             $ git push origin master         OR
             $ git push origin main
 
+    If you put in the wrong Remote origin url to update the url
+        1. Check the current remote URL
+            $ git remote -v   
+        2. Change the remote URL
+        Use the following command to update the remote origin to a new repository URL:   
+            $ git remote set-url origin <new_repository_url>
+            example:   $ git remote set-url origin https://github.com/username/new-repo.git
+        3. Verify the change
+            $ git remote -v
+
+
 
 
 Note: must add "<directory name>" if the directory title you are referencing had spaces in it
